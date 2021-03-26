@@ -76,7 +76,7 @@ export default {
     overflow: auto;
     overflow-x: hidden;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     
     .tool-view{
         width: 100vw;
@@ -84,33 +84,35 @@ export default {
         // background: #ffffff;
         box-shadow: 0 1px 2px rgba(0, 21, 41, 0.08);
         box-sizing: border-box;
-        position: absolute;
+        // position: absolute;
         top: 0;
         left: 0;
         z-index: 1; 
     }
 
     .content-view{
-        // top: 0;
+        margin-top: 20px;
         width: 100%;
-        position: relative;
+        display: flex;
+        flex-direction: column;
+
+         .user-view{
+            width: 180px;
+            float: right;
+            right: 0;
+            // top: 0;
+            position: absolute;
+            margin: 40px calc(100% - 100vw + 60px) 20px 20px;
+            box-sizing: border-box;
+        }
+
+        .main-view{
+            width: calc(100vw - 320px);
+            position: relative;
+        }
     }
 
-    .user-view{
-        width: 180px;
-        right: 0;
-        top: 0;
-        // float: right;
-        position: absolute;
-        margin: 40px calc(100% - 100vw + 60px) 20px 20px;
-        box-sizing: border-box;
-
-    }
-
-    .main-view{
-        width: calc(100vw - 320px);
-        position: relative;
-    }
+   
 
     //基础布局
     & > .nav-view {
